@@ -21,5 +21,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 
 RUN apk upgrade
 
-COPY docker/php/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
-COPY docker/php/php.ini /etc/php7/conf.d/zzz_custom.ini
+#COPY docker/php/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
+#COPY docker/php/php.ini /etc/php7/conf.d/zzz_custom.ini
