@@ -9,7 +9,7 @@ RUN apk --no-cache add php7 php7-fpm php7-json php7-openssl php7-curl \
 
 RUN apk upgrade
 
-RUN apk --no-cache add php7-pecl-amqp php-zip
+RUN apk --no-cache add php7-pecl-amqp  php-zip
 # Configure nginx
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 # Install composer
