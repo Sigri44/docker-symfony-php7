@@ -6,7 +6,6 @@ RUN apk --no-cache add php7 php7-fpm php7-json php7-openssl php7-curl \
     php7-mbstring php7-gd php7-simplexml php7-xmlwriter php7-tokenizer nginx curl \
     php7-pdo php7-pdo_pgsql php7-iconv php7-redis
 
-
 RUN apk upgrade
 
 RUN apk --no-cache add php7-pecl-amqp  php-zip
