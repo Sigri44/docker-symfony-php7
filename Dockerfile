@@ -13,6 +13,9 @@ RUN apk upgrade
 # Configure nginx
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 
+# PHP8 symbolic link
+RUN ln -s /usr/bin/php8 /usr/bin/php
+
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php8 -- --install-dir=/usr/bin --filename=composer
 
