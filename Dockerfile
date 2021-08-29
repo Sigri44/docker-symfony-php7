@@ -8,7 +8,7 @@ RUN apk --no-cache add php8 php8-fpm php8-json php8-openssl php8-curl php8-iconv
 
 RUN apk upgrade
 
-RUN apk --no-cache add php8-pecl-amqp  php-zip
+#RUN apk --no-cache add php8-pecl-amqp php-zip
 # Configure nginx
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 # Install composer
