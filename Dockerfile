@@ -16,8 +16,7 @@ RUN echo 'alias php="php8"' >> ~/.bashrc && source ~/.bashrc
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Install composer
-RUN curl -s https://getcomposer.org/installer | php8 --install-dir=/usr/bin --filename=composer
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php8 -- --install-dir=/usr/bin --filename=composer
 
 # Configure PHP-FPM
 COPY config/php/fpm-pool.conf /etc/php8/php-fpm.d/zzz_custom.conf
