@@ -2,21 +2,21 @@ FROM alpine:latest
 
 RUN apk update
 
-RUN apk --no-cache add php7 php7-fpm php7-json php7-openssl php7-curl php7-iconv php7-pdo_mysql \
-    php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session \
-    php7-mbstring php7-gd php7-simplexml php7-xmlwriter php7-tokenizer nginx supervisor curl
+RUN apk --no-cache add php8 php8-fpm php8-json php8-openssl php8-curl php8-iconv php8-pdo_mysql \
+    php8-zlib php8-xml php8-phar php8-intl php8-dom php8-xmlreader php8-ctype php8-session \
+    php8-mbstring php8-gd php8-simplexml php8-xmlwriter php8-tokenizer nginx supervisor curl
 
 RUN apk upgrade
 
-RUN apk --no-cache add php7-pecl-amqp  php-zip
+RUN apk --no-cache add php8-pecl-amqp  php-zip
 # Configure nginx
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # Configure PHP-FPM
-COPY config/php/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
-COPY config/php/php.ini /etc/php7/conf.d/zzz_custom.ini
+COPY config/php/fpm-pool.conf /etc/php8/php-fpm.d/zzz_custom.conf
+COPY config/php/php.ini /etc/php8/conf.d/zzz_custom.ini
 
 # Copy run script
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
