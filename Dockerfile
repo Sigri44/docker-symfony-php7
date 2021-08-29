@@ -8,6 +8,9 @@ RUN apk --no-cache add php8 php8-fpm php8-json php8-openssl php8-curl php8-iconv
 
 RUN apk upgrade
 
+# Add PHP8 alias
+RUN echo 'alias php="php8"' >> ~/.bashrc
+
 #RUN apk --no-cache add php8-pecl-amqp php-zip
 # Configure nginx
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
