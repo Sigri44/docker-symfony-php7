@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.1.1
+ARG PHP_VERSION=8.1.10
 FROM php:${PHP_VERSION}-fpm-alpine
 
 RUN apk update
