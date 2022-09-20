@@ -7,6 +7,8 @@ RUN apk update
 #    php8-zlib php8-xml php8-phar php8-intl php8-dom php8-xmlreader php8-ctype php8-session \
 #    php8-mbstring php8-gd php8-simplexml php8-xmlwriter php8-tokenizer nginx supervisor curl
 
+RUN apk --no-cache add supervisor
+
 RUN apk upgrade
 
 #RUN apk --no-cache add php8-pecl-amqp php-zip
