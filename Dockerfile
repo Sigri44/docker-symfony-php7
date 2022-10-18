@@ -23,8 +23,8 @@ COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # Configure PHP-FPM
-#COPY config/php/fpm-pool.conf /usr/local/etc/php/php-fpm.d/zzz_custom.conf
-#COPY config/php/php.ini /usr/local/etc/php/conf.d/zzz_custom.ini
+COPY config/php/fpm-pool.conf /usr/local/etc/php/php-fpm.d/zzz_custom.conf
+COPY config/php/php.ini /usr/local/etc/php/conf.d/zzz_custom.ini
 
 # Copy run script
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
